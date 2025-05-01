@@ -1,15 +1,26 @@
 {
-  "name": "Tábori Stopper",
-  "short_name": "Stopper",
-  "start_url": ".",
+  "name": "Kviddics Időzítő",
+  "short_name": "Kviddics",
+  "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#2196F3",
+  "background_color": "#1a1a1a",
+  "theme_color": "#FFD700",
   "icons": [
+    {
+      "src": "icons/icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
     {
       "src": "icons/icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable"
     },
     {
       "src": "icons/icon-512.png",
