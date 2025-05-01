@@ -1,118 +1,122 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background: #1a1a1a;
-    color: #fff;
-    padding: 1em;
-    margin: 0;
-  }
-  
-  h1 {
-    color: #FFD700;
-    font-size: 1.8em;
-  }
-  
-  .settings {
-    margin: 1em 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1em;
-  }
-  
-  .settings label {
-    font-size: 1.1em;
-    margin-right: 0.5em;
-  }
-  
-  .settings input,
-  .settings select {
-    font-size: 1em;
-    padding: 0.3em;
-    margin: 0.5em;
-    width: 100px;
-  }
-  
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #1a1a1a;
+  color: #fff;
+  padding: 1em;
+  margin: 0;
+}
+
+h1 {
+  color: #FFD700;
+  font-size: 1.8em;
+}
+
+.settings {
+  margin: 1em 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+}
+
+.settings label {
+  font-size: 1.1em;
+  margin-right: 0.5em;
+}
+
+.settings input,
+.settings select {
+  font-size: 1em;
+  padding: 0.3em;
+  margin: 0.5em;
+  width: 100px;
+}
+
+.player-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.5em;
+  padding: 0.5em;
+}
+
+.player {
+  background: #333;
+  border-radius: 10px;
+  padding: 0.5em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.player.blink {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { background: #8400ff; }
+}
+
+.player .house-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+}
+
+.player h3 {
+  margin: 0.3em 0;
+  font-size: 1em;
+  color: #fff;
+}
+
+.player input {
+  width: 50%;
+  padding: 0.2em;
+  margin-bottom: 0.3em;
+  font-size: 0.8em;
+}
+
+.player select {
+  width: auto;
+  padding: 0.2em;
+  margin-bottom: 0.3em;
+  font-size: 0.8em;
+}
+
+.player .timer {
+  font-size: 1.5em;
+  margin: 0.3em 0;
+}
+
+.player button {
+  font-size: 0.9em;
+  padding: 0.4em;
+  border: 2px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin: 0.1em 0;
+}
+
+.start { background: #4CAF50; color: white; }
+.stop { background: #f44336; color: white; }
+.reset { background: #fc9700; color: white; }
+.griffindel { background: #7F0909; }
+.griffindel-icon { background-image: url('icons/griffi.png'); }
+.mardekar { background: #0D6217; }
+.mardekar-icon { background-image: url('icons/mardi.png'); }
+.hollóhát { background: #000A90; }
+.hollóhát-icon { background-image: url('icons/hollo.png'); }
+.hugrabug { background: goldenrod; }
+.hugrabug-icon { background-image: url('icons/hugra.png'); }
+
+@media (max-width: 600px) {
   .player-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 1em;
-    padding: 1em;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   }
-  
-  .player {
-    background: #333;
-    border-radius: 10px;
-    padding: 1em;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    position: relative;
-  }
-  
-  .player.active {
-    border: 3px solid #FFD700;
-  }
-  
-  .player.blink {
-    animation: blink 1s infinite;
-  }
-  
-  @keyframes blink {
-    50% { background: #FFD700; }
-  }
-  
-  .player .icon {
-    width: 30px;
-    height: 30px;
-    margin: 0 auto;
-    background: #fff;
-    border-radius: 50%;
-  }
-  
-  .player h3 {
-    margin: 0.5em 0;
-    font-size: 1.2em;
-    color: #FFD700;
-  }
-  
-  .player input {
-    width: 100%;
-    padding: 0.3em;
-    margin-bottom: 0.5em;
-    font-size: 0.9em;
-  }
-  
-  .player select {
-    width: 100%;
-    padding: 0.3em;
-    margin-bottom: 0.5em;
-    font-size: 0.9em;
-  }
-  
-  .player .timer {
-    font-size: 2em;
-    margin: 0.5em 0;
-  }
-  
-  .player button {
-    font-size: 1em;
-    padding: 0.5em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    margin: 0.2em 0;
-  }
-  
-  .start { background: #4CAF50; color: white; }
-  .stop { background: #f44336; color: white; }
-  .reset { background: #ff9800; color: white; }
-  .griffindel { background: #7F0909; }
-  .mardekar { background: #0D6217; }
-  .hollóhát { background: #000A90; }
-  .hugrabug { background: #EEE117; }
-  
-  @media (max-width: 600px) {
-    .player-list {
-      grid-template-columns: 1fr;
-    }
-  }
+}
