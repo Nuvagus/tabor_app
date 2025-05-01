@@ -32,7 +32,7 @@ const houses = {
   
   function renderPlayers() {
     const playerList = document.querySelector('.player-list');
-    playerList.innerHTML = '';
+    playerList.innerHTML = ''; // Töröljük a meglévő tartalmat, hogy ne legyen duplikáció
     const visiblePlayers = players.slice(0, playerCount);
     visiblePlayers.forEach(player => {
       const playerDiv = document.createElement('div');
@@ -53,17 +53,27 @@ const houses = {
         <button class="stop" onclick="stopTimer(${player.id})" aria-label="Időzítő megállítása ${player.name} számára">Stop</button>
         <button class="reset" onclick="resetTimer(${player.id})" aria-label="Időzítő visszaállítása ${player.name} számára">Reset</button>
       `;
-      playerDiv.querySelector('input').addEventListener('change', (e) => {
+  
+      // Név szerkesztése eseménykezelő
+      const nameInput = playerDiv.querySelector('input');
+      nameInput.addEventListener('change', (e) => {
         player.name = e.target.value || `Hajtó ${player.id}`;
         saveState();
         renderPlayers();
       });
-      playerDiv.querySelector('select').addEventListener('change', (e) => {
+  
+      // Házválasztás eseménykezelő
+      const houseSelect = playerDiv.querySelector('select');
+      houseSelect.addEventListener('change', (e) => {
+        console.log(`Ház megváltoztatva ${player.name} számára: ${e.target.value}`); // Debug log
         player.house = e.target.value;
         saveState();
         renderPlayers();
       });
+  
+      // Swap eseménykezelő (kattintás a kártyára)
       playerDiv.addEventListener('click', () => setActivePlayer(player.id));
+  
       playerList.appendChild(playerDiv);
     });
   }
