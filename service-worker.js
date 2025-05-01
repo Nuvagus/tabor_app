@@ -10,7 +10,11 @@ self.addEventListener('install', event => {
         '/icons/icon-72.png',
         '/icons/icon-144.png',
         '/icons/icon-192.png',
-        '/icons/icon-512.png'
+        '/icons/icon-512.png',
+        '/logos/griffindel-logo.png',
+        '/logos/mardekar-logo.png',
+        '/logos/hollóhát-logo.png',
+        '/logos/hugrabug-logo.png'
       ]);
     })
   );
